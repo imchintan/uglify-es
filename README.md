@@ -4,9 +4,9 @@ UglifyJS 3
 UglifyJS is a JavaScript parser, minifier, compressor and beautifier toolkit.
 
 #### Note:
-- **`uglify-js@3` has a simplified [API](#api-reference) and [CLI](#command-line-usage) that is not backwards compatible with [`uglify-js@2`](https://github.com/mishoo/UglifyJS2/tree/v2.x)**.
+- **`uglify-es@3` has a simplified [API](#api-reference) and [CLI](#command-line-usage) that is not backwards compatible with [`uglify-es@2`](https://github.com/mishoo/UglifyJS2/tree/v2.x)**.
 - **Documentation for UglifyJS `2.x` releases can be found [here](https://github.com/mishoo/UglifyJS2/tree/v2.x)**.
-- `uglify-js` only supports JavaScript (ECMAScript 5).
+- `uglify-es` only supports JavaScript (ECMAScript 5).
 - To minify ECMAScript 2015 or above, transpile using tools like [Babel](https://babeljs.io/).
 
 Install
@@ -17,11 +17,11 @@ First make sure you have installed the latest version of [node.js](http://nodejs
 
 From NPM for use as a command line app:
 
-    npm install imchintan/uglify-js -g
+    npm install imchintan/uglify-es -g
 
 From NPM for programmatic use:
 
-    npm install imchintan/uglify-js
+    npm install imchintan/uglify-es
 
 # Command line usage
 
@@ -347,7 +347,7 @@ identify mistakes like writing mangled keys to storage.
 Assuming installation via NPM, you can load UglifyJS in your application
 like this:
 ```javascript
-var UglifyJS = require("uglify-js");
+var UglifyJS = require("uglify-es");
 ```
 
 There is a single high level function, **`minify(code, options)`**,
@@ -467,7 +467,7 @@ var result = UglifyJS.minify({"foo.js" : "if (0) else console.log(1);"});
 console.log(JSON.stringify(result.error));
 // {"message":"Unexpected token: keyword (else)","filename":"foo.js","line":1,"col":7,"pos":7}
 ```
-Note: unlike `uglify-js@2.x`, the `3.x` API does not throw errors. To
+Note: unlike `uglify-es@2.x`, the `3.x` API does not throw errors. To
 achieve a similar effect one could do the following:
 ```javascript
 var result = UglifyJS.minify(code, options);
@@ -1091,10 +1091,10 @@ comparable minify speeds and gzip sizes to
 | d3.js | minify size | gzip size | minify time (seconds) |
 | --- | ---: | ---: | ---: |
 | original | 451,131 | 108,733 | - |
-| uglify-js@3.0.24 mangle=false, compress=false | 316,600 | 85,245 | 0.70 |
-| uglify-js@3.0.24 mangle=true, compress=false | 220,216 | 72,730 | 1.13 |
+| uglify-es@3.0.24 mangle=false, compress=false | 316,600 | 85,245 | 0.70 |
+| uglify-es@3.0.24 mangle=true, compress=false | 220,216 | 72,730 | 1.13 |
 | butternut@0.4.6 | 217,568 | 72,738 | 1.41 |
-| uglify-js@3.0.24 mangle=true, compress=true | 212,511 | 71,560 | 3.36 |
+| uglify-es@3.0.24 mangle=true, compress=true | 212,511 | 71,560 | 3.36 |
 | babili@0.1.4 | 210,713 | 72,140 | 12.64 |
 
 To enable fast minify mode from the CLI use:
